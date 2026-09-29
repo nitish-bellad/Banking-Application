@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    url: jdbc:mysql://junction.proxy.rlwy.net:47960/railway
+    username: root
+    password: "sLHMNhIZrRKJUkKAFZPBEDatYhCINSzO"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080
+          jwk-set-uri: http://localhost:8080/oauth2/jwks
+          secret-key: YmRzZGZzZGRmYXNkZnNrc2RuZmRzZHNrZmRza2Zkc2tkZnNkZnNrZmRz
+      authorizationserver:
+        enabled: true
+
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+      hibernate:
+        SQL: DEBUG
